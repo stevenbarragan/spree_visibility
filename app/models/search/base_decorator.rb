@@ -1,7 +1,7 @@
 Spree::Core::Search::Base.class_eval do
   cattr_accessor :last_durably_decorate
 
-  @@last_durably_decorate = DurableDecorator::Base.determine_sha('Spree::Core::Search::Base#get_base_scope')
+  @@last_durably_decorate ||= DurableDecorator::Base.determine_sha('Spree::Core::Search::Base#get_base_scope')
 
   protected
 
